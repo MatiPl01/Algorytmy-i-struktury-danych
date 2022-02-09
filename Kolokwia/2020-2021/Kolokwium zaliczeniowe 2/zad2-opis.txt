@@ -1,0 +1,70 @@
+Opis rozwiązania 2. zadania.
+
+
+PRZYGOTOWANIE GRAFU:
+
+Każdą z liczb w tablicy wejściowej możemy potraktować jako krawędź skierowaną, która łączy wierzchołki
+'u' i 'v' (gdzie 'u' jest wierzchołkiem o indeksie L[i] // 10^K, a 'v' jest wierzchołkiem o indeksie
+L[i] % 10^K, gdzie 'i' jest indeksem pewnej liczby w tablicy 'L'). W przykładzie z zadania możemy
+zaobserwować, że w ten sposób dzielimy liczbę na 2 wartości (kroimy na 2 części), np. dla K = 1, liczbę
+56 podzielimy w taki sposób: 5|6, więc mamy krawędź 5 -> 6.
+
+Musimy więc utworzyć graf, który składa się ze wszytkich takich krawędzi (liczb w tablicy 'L'). W celu
+otrzymania krawędzi z liczby, korzystam z funkcji 'num_to_edge', która używa funkcji 'divmod'. Funkcja
+'divmod' działa tak, jakbyśmy wykonali operacje dzielenia całkowitoliczbowego i modulo, a następnie 
+zwrócili krotkę z obydwoma wynikami działań: (n // M, n % M). Tworzymy graf w reprezentacji listowej.
+Musimy jeszcze wyznaczyć największy indeks wierzchołka, w czym pomaga funkcja 'get_max_vert_ind'.
+Ta funkcja przechodzi liniowo przez wszystkie wartości w tablicy 'L' i dla każdej liczby (krawędzi)
+bierze maksimum z indeksów wierzchołków, które ona łączy ('u' i 'v'), a następnie maksimum z otrzymanej
+liczby i poprzednio największej wartości. Zwrócony zostaje największy indeks wierzchołka w grafie.
+
+Przy pomocy funkcji 'build_graph' budujemy graf (znów przechodzimy w pętli przez wszystkie liczby
+i łączymy krawędziami odpowiednie wierzchołki). 
+
+
+USTAWIANIE LICZB W ODPOWIEDNIEJ KOLEJNOŚCI:
+
+Teraz ważniejsza część, w której musimy ustawić liczby w odpowiedniej kolejności lub pokazać, że nie jest
+to możliwe. Zauważmy, że szukana kolejność będzie możliwa tylko wtedy, gdy początek następnej liczby
+w tablicy będzie taki sam jak koniec poprzeniej, tzn. L = [12,23,31,15,54,43,35,56] mamy kolejno liczby
+12, 23, 31, ..., a więc kolejne krawędzie to 1 -> 2, 2 -> 3, 3 -> 1, ...
+
+Można zauważyć, że każdą z krawędzi w grafie odwiedzimy tylko raz (jeżeli jest kilka takich samych liczb
+w tablicy, np. [12, 12, 12], to mamy 3 osobne krawędzie w grafie między wierzchołkami 1 i 2). Po przejściu
+np. przez krawędź 1 -> 2 (liczba 12), automatycznie trafiamy do wierzchołka o indeksie 2, a więc spełniony
+jest warunek, że kolejna liczba musi się zaczynać od wartości A % 10^K = 12 % 10^1 = 12 % 10 = 2, więc jeżeli
+da się wyjść wcześniej nieużywaną krawędzią z tego wierzchołka do innego, to możemy dołożyć do uporządkowanej
+tablicy kolejną liczbę (w powyższym przykładzie z wierzchołka 2 przechodzimy do 3, więc kolejna liczba to 23).
+
+Skoro chcemy odwiedzić wszystkie krawędzie dokłacnie jeden raz (pozwoli nam to na uzyskanie docelowego
+porządku, co opisałem wyżej), problem przypomina znalezienie cyklu/ścieżki Eulera w grafie skierowanym
+(Wiem, że tego nie było na zajęciach, ale ja na wszelki wypadek sobie zaimplementowałem podobny algorytm
+wcześniej i dołączyłem go chyba w plikach na dysku. Na wszelki wypadek dorzucę jeszcze raz). Zauważmy,
+że może być to zarówno ścieżka, jak i cykl, bo z ostatniej liczby w uporządkowanej tablicy nie jest konieczne
+zapewnienie możliwości przejścia do pierwszej - patrz przykład z zadania [12,23,31,15,54,43,35,56] - z 56
+nie wejdziemy do 12, bo 6 != 1. Szukamy więc albo ścieżki albo cyklu. Pomaga mi w tym funkcja 'eulerian',
+która sprawdza, czy w grafie istnieje ścieżka/cykl Eulera i jeżeli istnieje cykl, to zwraca None jako
+indeks wierzchołka początkowego (bo możemy zacząć gdziekolwiek, ale niekoniecznie w wierzchołku o indeksie
+0, bo nasz graf może mieć wierzchołki, z których nie wychodzi żadna krawędź - np. dla L = [12, 26, 67, 71],
+w grafie znajdują się wierzchołki 0, 1, 2, 3, 4, 5, 6, 7 (lista reprezentująca graf ma długość 8), ale
+kawędzie wychodzą tylko z wierzchołków o indeksach 1, 2, 6, 7, a wierzchołki 0, 3, 4, 5 nie są połączone
+z żadną krawędzią). Poza tym zwracamy 'out_deg', czyli tablicę stopni krawędzi wychodzących z poszczególnych
+wierzchołków (obejrzyj wideo na yt o cyklu/ścieżce Eulera w grafie skierowanym: 
+https://www.youtube.com/watch?v=8MpoO2zA2l4). Jeżeli w grafie nie istnieje cykl Eulera, ale jest ścieżka
+Eulera, to zwracamy wierzchołkek początkowy oraz tablicę 'out_deg'.
+
+W kolejnym kroku funkcja 'euler' sprawdza, czy w grafie istnieje cykl lub ścieżka, a następnie, jeżeli
+jest cykl, to szuka pierwszego wierzchołka, z którego wychodzi jakaś krawędź i uznaje go za wierzchołek
+początkowy. W kolejnym kroku (taki sam dla cyklu i ścieżki) odtwarzane są kolejno odwiedzane na cyklu/ścieżce
+wierzchołki (wyjaśnienie w podlinkowanym wideo na yt).
+
+Ostatnim krokiem jest przekonwertowanie kolejnych krawędzi spowrotem na liczby. Będzie ich o 1 mniej niż
+wierzchołków w tablicy zwróconej przez funkcję 'euler', bo każdą kolejną parę sąsiednich wierzchołków łączy
+jedna krawędź, przez którą przechodzimy. Stąd bierze się formuła: L[i] = vert[i] * M + vert[i + 1], w której
+to vert[i] jest odpowiednikiem wierzchołka oznaczanego przez 'u', vert[i + 1] jest kolejnym odwiedzonym
+wierzchołkiem, czyli 'v', a M = 10^K służy do przesunięcia wartości 'u' w lewo, a dalej doklejamy 'v', czyli
+np. jeżeli tablica 'vert' wygląda tak: [1, 2, 3, 1, 5, ...], to w kolejnych krokach:
+i = 0   u = vert[0] = 1   v = vert[0 + 1] = vert[1] = 2   M = 10^K = 10^1 = 10   -->   1 * 10 + 2 = 12
+i = 1   u = vert[1] = 2   v = vert[1 + 1] = vert[2] = 3   M = 10^K = 10^1 = 10   -->   2 * 10 + 3 = 23
+i = 2   u = vert[2] = 3   v = vert[2 + 1] = vert[3] = 1   M = 10^K = 10^1 = 10   -->   3 * 10 + 1 = 31
+...

@@ -1,0 +1,1 @@
+Ten algorytm nie jest optymalny. Lepszą wersję znajdziesz, przechodząc do tej ścieżki: ../../Przydatne algorytmy/Moje opracowania/Algorytmy sortowania (tablice).ipynb (tam znajduje się kilka różnich wetsji Merge Sorta z opisami).

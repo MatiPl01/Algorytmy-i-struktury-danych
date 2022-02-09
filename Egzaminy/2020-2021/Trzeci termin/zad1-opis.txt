@@ -1,0 +1,126 @@
+W zaproponowanym algorytmie korzystam ze zmodyfikowanej funkcji, znajdującej najdłuższy
+podciąg rosnący, w taki sposób, że funkcja szuka najdłuższego ciągu malejącego. Funkcja
+przyjmuje tablicę 'arr', w której szukany jest podciąg, a także parametry 'begin' oraz
+'end', z których 'begin' oznacza indeks początkowy w tablicy 'arr', od którego ma się
+rozpocząć poszukiwanie LDS (ang. longest decreasing subsequence), natomiast 'end' to
+indeks ostatniego elementu, który ma zostać sprawdzony, podczas poszukiwania LDS.
+Ponieważ w zadaniu szukamy ciągu ściśle rosnącego, ściśle malejącego lub najpierw
+ściśle malejącego, a następnie rosnącego, możemy zmodyfikować funkcję 'lds' tak, aby
+szukała ona LDS w dwie strony (tj. od lewej do prawej, gdy chcemy ciąg malejący lub od
+prawej do lewej, aby otrzymać ciąg rosnący - wynika to stąd, że podciąg malejący od lewej
+do prawej, jest podciągiem rosnącym od prawej do lewej i odwrotnie).
+
+Funkcja 'lds' działa w taki sposób, że dla kolejnych indeksów ze wskazanego zakresu,
+sprawdza, czy 'arr[i]' może przedłużyć któryś z podciągów malejących, których końce
+są zapisane w tablicy 'last'. Ponieważ końce podciągów malejących w tablicy 'last' są
+w porządku malejącym (odwrotnie do algorytmu 'lis' o złożoności O(n * log(n))), korzystam
+z wyszukiwania binarnego, w celu znalezienia jak najmniejszej wartości w tablicy 'last',
+która jest większa od 'arr[i]' (czyli szukam takiego końca podciągu malejącego, do
+którego możemy dołożyć 'arr[i]', aby go przedłużyć). Jeżeli okaże się, że 'j == len(last)',
+czyli 'arr[i]' przedłuża najdłuższy dotychczas podciąg, musimy dodać 'arr[i]' na koniec
+tablicy 'last', ponieważ 'arr[i]' jest końcem nowego najdłuższego podciągu. Jeżeli jednak
+'arr[i]' przedłuża jakiś krótszy podciąg od najdłuższego podciągu malejącego, czyli 'j'
+otrzyma wartość mniejszą od 'len(last)', nadpisujemy 'last[j]' przez 'arr[i]'. Wynika to
+stąd, że 'arr[i]' ma wartość większą (lub równą) nadpisywanej wartości 'last[j]'
+i jednocześnie większą od 'last[j + 1]' (następnej wartości w tablicy końców ciągów 
+malejących), więc 'arr[i]' nie może przedłużyć podciągu, który kończy się wartością 
+'last[j + 1]', ale przedłuża podciąg kończący się na 'last[j]'. Opłaca nam się dokonać
+tego nadpisania, ponieważ im większa wartość przedłuża dany podciag, tym łatwiej jest
+znaleźć kolejną wartość, która będzie go mogła dalej przedłużyć (np. last = [8, 6, 3];
+sprawdzana obecnie wartość to arr[i] = 5; nadpisujemy last[2] = 3 przez arr[i]; 
+otrzymujemy last = [8, 6, 5]; w kolejnym kroku, jeżeli arr[i] = 4, możemy przedłużyć
+najdłuższy podciąg malejący, dodając 4 na koniec tablicy last, a więc: last = [8, 6, 5, 4];
+jeżeli byśmy nie nadpisali last[2] przez wartość 5, wartość 4 już nie mogłaby przedłużyć
+podciągu, bo 4 > 3).
+
+Powyższy opis streszcza główną ideę poszukiwania LDS w czasie O(n * log(n)) i bardzo
+przypomina poszukiwanie LIS w czasie O(n * log(n)). My jednak możemy mieć również podciąg,
+który najpierw jest malejący, a potem rosnący. Zauważmy, że taki podciąg możemy wyznaczyć,
+znajdując najpierw podciąg malejący, który kończy się przed rozpoczęciem się podciągu
+rosnącego. Jest to o tyle skomplikowane, że ani podciąg malejący, ani rosnący, nie muszą
+być podciągami najdłuższymi.
+PRZYKŁAD:
+X = [0, 6, 5, 4, 7, 8, 1]
+LDS: [6, 5, 4, 1]     <- najdłuższy malejący
+LIS: [0, 4, 7, 8]     <- najdłuższy rosnący   
+MR:  [6, 5, 4, 7, 8]  <- rozwiązanie
+Zauważmy, że ani LDS, ani LIS nie muszą być podciągami szukanego ciągu MR. Musimy więc
+w jakiś sposób znaleźć takie podciągi (rosnący i malejący), które nie muszą być najdłuższe
+i jednocześnie ich połączenie daje najdłuższy podciąg MR. Zaobserwować możemy jednak pewną
+właściwość, a mianowicie, podciąg malejący, który jest podciągiem ciągu MR (podciąg: 
+[6, 5, 4]) jest najszybciej kończącym się podciągiem malejącym o długości 3 w tablicy X,
+tzn. ostatni jego element (4) ma najmniejszy możliwy indeks w tablicy X (inne podciągi
+malejące długości 3 to: [6, 5, 1] i [6, 4, 1], ale oba kończą się wartością, której indeks
+w tablicy X jest większy od indeksu wartości 4). Podobnie dla podciągu rosnącego, będącego
+podciągiem ciągu MR, czyli dla [4, 7, 8]. W jego przypadku wartość początkowa (tu 4) ma
+największy możliwy indeks (inne podciągi rosnące długości 3 to np.: [0, 6, 7], [5, 7, 8], ...).
+Widzimy więc, że jeżeli MR się składa z podciągu malejącego, a następnie rosnącego, konieczne
+jest znalezienie jak najszybciej kończącego się podciągu malejącego i jak najpóźniej
+zaczynającego się podciągu rosnącego, a jedynym punktem wspólnym podciągu malejącego
+i podciągu rosnącego może być ostatnia wartość podciągu malejącego (pierwsza rosnącego).
+Ponieważ nie jesteśmy w stanie od razu znaleźć idealnego podziału na podciąg malejący
+i rosnący, podczas działania funkcji 'lds', będziemy w tablicy 'first_ind' zapisywać indeks
+wartości kończącej podciąg długości 'i' ('first_ind[i]' przechowuje indeks ostatniej wartości
+podciągu malejącego o długości 'i + 1'). Zapisujemy wyłącznie indeks pierwszej wartości,
+która jest wartością końcową podciągu danej długości (czyli jeżeli rozważamy podciąg długości
+2, w przypadku tablicy X = [0, 6, 5, 4, 7, 8, 1], 'first_ind[1] = 2', bo najszybciej kończący
+się podciąg malejący długości 2 to [6, 5], a 5 ma indeks 2. Jednocześnie zapisujemy indeksy
+rodziców oraz indeksy bieżących wartości w tablicy 'last' (te indeksy są zapisywane w tablicy
+'curr_ind' i służą do wyznaczenia rodziców - indeksów poprzednich wartości LDS).
+
+Skoro mmay już z grubsza omówione działanie funkcji 'lds' (mam nadzieję, że coś da się z tego
+długiego opisu zrozumieć), możemy przejść do głównej funkcji, czyli 'mr'. W pierwszym kroku
+robimy to, co łatwe, czyli szukamy LDS od indeksu 0 do n - 1, a więc podciągu malejącego
+w całej tablicy 'X', a następnie LDS od n - 1 do 0, czyli LIS w całej tablicy 'X' (LDS szukany
+od końca to LIS, co opisałem wyżej). Pozostało nam jeszcze sprawdzenie, czy da się skleić
+podciąg malejący z podciągiem rosnacym w taki sposób, aby otrzymany podciąg malejąco-rosnący,
+był dłuższy jednocześnie od LDS i LIS. W tym celu, przechodzę w pętli po wartościach tablicy
+'ds_first_ind' (w której panuje porządek rosnący), przypisując w kolejnych iteracjach
+zmiennej 'ds_i' indeks, a zmiennej 'ds_end_idx' wartość z tablicy 'ds_first_ind'.
+Ponieważ tablica 'is_first_ind' zawiera wartości w porządku malejącym, mogę skorzystać
+z wyszukiwania binarnego, które przystosowałem to tablicy, w której panuje porządek malejący.
+Przy jego pomocy, znając indeks końcowej wartości obecnie sprawdzanego podciągu malejącego
+('ds_end_idx'), szukam w tablicy 'is_first_ind' indeksu 'ds_end_idx' (jeżeli nie ma takiego
+indeksu, czyli podciąg rosnący nie zaczyna się od indeksu 'ds_end_idx', otrzymam kolejny indeks
+wartości w tablicy 'is_first_ind', a więc indeks wartości mniejszej od 'ds_end_idx'). Nam
+chodzi jednak o podciąg rosnący, którego początek znajduje się dalej od indeksu 'ds_end_idx'
+(końca malejącego podciagu). Z tego powodu, dopóki 'is_first_ind[is_i]' jest nie większy
+niż 'ds_first_ind[ds_i]' (czyli indeks początkowej wartości ciągu rosnącego jest mniejszy
+lub równy indeksowi końcowej wartości podciągu malejącego) lub wartość początkowa podciągu
+rosnącego 'X[is_first_ind[is_i]]' jest taka sama jak wartość końcowa podciągu malejącego
+'X[ds_first_ind[ds_i]]' jest taka sama (mamy 2-elementowy ciąg stały, a tego nie chemy),
+przesuwamy 'is_i' w lewo (zmniejszamy indeks w tablicy 'is_first_ind', w której panuje porządek
+malejący, a więc zwiększamy w ten sposób indeks początkowej wartości podciągu rosnącego).
+Jeżeli wyjdziemy poza zakres (nie istnieje podciąg rosnący, który możemy doczepić do obecnie
+sprawdzanego podciągu malejącego, w celu otrzymania docelowego podciągu MR), przerywamy pętlę.
+Pętlę 'for' możemy również przerwać od razu, jeżeli 'ds_first_ind[ds_i] >= is_first_ind[0]',
+czyli indeks końcowej wartości podciągu malejącego jest większy lub taki sam jak największy
+indeks początkowej wartości podciągu rosnącego ('is_first_ind[0]' zawsze zawiera największy
+indeks początkowej wartości podciągu rosnącego, a więc podciągu 1-elementowego, czyli
+'is_first_ind[0]' jest zawsze równy 'len(X) - 1'). Jeżeli pętla nie zostanie przerwana,
+sprawdzamy, czy długość podciągu malejąco-rosnącego, jaki w danym momencie jesteśmy w stanie
+otrzymać ('length = is_i + ds_i + 2' - dodajemy 2, ponieważ 'ds_i' to indeks, wskazujący na
+indeks końca podciągu malejącego w tablicy 'ds_first_ind', więc długość części malejącej
+podciągu MR wynosi 'ds_i + 1', natomiast 'is_i' to indeks indeksu wartości początkowej części
+rosnącej podciągu MR w tablicy 'is_first_ind', a długość części rosnącej wynosi 'is_i + 1').
+
+Teraz pozostała nam najłatwiejsza część, czyli zdecydowanie, który podciąg jest najdłuższy
+(tylko malejący / tylko rosnący / malejąco-rosnący) i odtworzenie tego podciągu. Jeżeli
+najdłuższy jest malejący ('best == 0'), wystarczy wywołać funkcję 'restore_subsequence',
+przekazując jej tablicę 'X', tablicę rodziców oraz indeks końcowej wartości podciągu malejącego,
+czyli 'ds_curr_ind[-1]'. Ponieważ startujemy od wartości końcowej, otrzymamy ciąg w odrotnej
+kolejności, więc przekazujemy argument 'reverse=True', aby odwrócić podciąg. Dla podciągu
+rosnącego ('best == 1') sytuacja jest analogiczna, jednakże tym razem 'is_curr_ind[-1]' jest
+indeksem początkowej wartości podciągu rosnącego, a rodzice to kolejne elementy szukanego
+podciągu (nie trzeba więc odwracać kolejności rozwiązania). Pozostaje przypadek, gdy trzeba
+skleić ciąg malejący z rosnącym. Wówczas korzystamy z wyznaczonych indeksów (końca podciągu
+malejącego i początku podciągu rosnącego), a następnie, na ich podstawie, szukamy ponownie
+podciągu malejącego, ale jedynie na fragmencie tablicy 'X' od indeksu '0' do wyznaczonego
+końca 'ds_end_idx' części malejącej, a następnie szukamy podciągu rosnącego od wyznaczonego
+początku 'is_begin_idx' do końca tablicy 'X' (ponieważ 'n = len(X)', 'n - 1 >= is_begin_idx',
+więc funkcja 'lds' będzie szukać LDS od końca, a więc otrzymamy LIS - opisałem to wcześniej).
+Otrzymane 2 podciągi musimy ze sobą połączyć, po odtworzeniu obu podciągów, na podstawie tablic
+rodziców.
+
+WIEM, ŻE ALGORYTM JEST SKOMPLIKOWANY, ALE TAKI MIAŁEM POMYSŁ NA ROZWIĄZANIE, KTÓREGO ZŁOŻONOŚĆ
+CZASOWA TO O(n * log(n)).
