@@ -12,7 +12,7 @@ Algorytmy zostały napisane z dbałością o czytelność kodu, niską złożono
 
 Poniższe sekcje zawierają rozwiązania zadań z laboratoriów, zajęć prowadzonych przez koło BIT Algo, kolokwiów oraz egzaminów. Większość zadań została rozwiązana w Jupyter Notebooku, dzięki czemu możliwe było załączenie ilustracji, obrazujących ideę rozwiązania, równań matematycznych pisanych z użyciem Latex'u oraz dodanie czytelnych komentarzy, wyjaśniających krok po kroku rozwiązanie zadania.
 
-<h2>
+<h4>
 <details>
 <summary>Zadania z zajęć</summary>
 <hr>
@@ -333,9 +333,9 @@ Poniższe sekcje zawierają rozwiązania zadań z laboratoriów, zajęć prowadz
 </ol>
 </h5>
 </details>
-</h2>
+</h4>
 
-<h2>
+<h4>
 <details>
 <summary>Zadania BIT Algo</summary>
 <hr>
@@ -660,9 +660,241 @@ Poniższe sekcje zawierają rozwiązania zadań z laboratoriów, zajęć prowadz
 </ol>
 </h5>
 </details>
-</h2>
+</h4>
 
-<h2>
+<h4>
+<details>
+<summary>Zadania obowiązkowe (z wykładów)</summary>
+<hr>
+<h5>W tej sekcji znajdują się rozwiązania zadań obowiązkowych, które zostały zadane na wykładzie. Rozwiązania tych zadań znajdują się również w sekcji <b>Zadania z zajęć</b>.</h5>
+<hr>
+<h5>
+<ul>
+<li>
+  <h3>2. Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/2. Wykład/Zadanie 1. (Quick Sort maksymalnie O(log n) pamięci).ipynb">1. Quick Sort Maksymalnie Olog N Pamięci</a>
+      </li>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/2. Wykład/Zadanie 2. (Wstawianie elementu do kopca binarnego).ipynb">2. Wstawianie Elementu Do Kopca Binarnego</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>3. Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/3. Wykład/Zadanie 1. (Tablica n liczb z zakresu [0...n^2-1]).ipynb">1. Tablica N Liczb Z Zakresu [0...N^2-1]</a>
+      </li>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/3. Wykład/Zadanie 2. (tablica zwierająca wiele powtórzeń - sortowanie w czasie O(n log(log(n))) ).ipynb">2. Tablica Zwierająca Wiele Powtórzeń - Sortowanie W Czasie On Loglogn </a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>5. Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/5. Wykład/Zadanie 1. (0-1 knapsack O(n sum(P)) time complexity, where P - array of profits).ipynb">1. 0-1 Knapsack On Sump Time Complexity, Where P - Array Of Profits</a>
+      </li>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/5. Wykład/Zadanie 2. (czy istnieje podciąg ciągu liczb naturalnych, który sumuje się do T).ipynb">2. Czy Istnieje Podciąg Ciągu Liczb Naturalnych, Który Sumuje Się Do T</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>7, Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/7. Wykład/Zadanie 1. (Tankowanie czołgu - różne warianty).ipynb">1. Tankowanie Czołgu - Różne Warianty</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>8. Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/8. Wykład/Zadanie 1. (Sprawdzanie, czy graf jest dwudzielny).ipynb">1. Sprawdzanie, Czy Graf Jest Dwudzielny</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>9. Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/9. Wykład/Zadanie 1. (Usuwanie wierzchołków z grafu skierowanego, by pozostawał zawsze spójny) .ipynb">1. Usuwanie Wierzchołków Z Grafu Skierowanego, By Pozostawał Zawsze Spójny </a>
+      </li>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/9. Wykład/Zadanie 2. (Szukanie cyklu długości 4 w grafie).ipynb">2. Szukanie Cyklu Długości 4 W Grafie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>12. Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/12. Wykład/Zadanie 1. (Najkrótsza ścieżka o malejących wagach między parą wierzchołków).ipynb">1. Najkrótsza Ścieżka O Malejących Wagach Między Parą Wierzchołków</a>
+      </li>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/12. Wykład/Zadanie 2. (Domknięcie przechodnie grafu skierowanego).ipynb">2. Domknięcie Przechodnie Grafu Skierowanego</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>13. Wykład</h3>
+  <ul>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/13. Wykład/Zadanie 1. (Poprzednik lub następnik w drzewie BST).ipynb">1. Poprzednik Lub Następnik W Drzewie Bst</a>
+      </li>
+     <li>
+        <a href="./Zadania obowiązkowe (z wykładów)/13. Wykład/Zadanie 2. (Maksymalny przepływ w sieci o kilku źródłach i kilku ujściach).ipynb">2. Maksymalny Przepływ W Sieci O Kilku Źródłach I Kilku Ujściach</a>
+      </li>
+  </ul>
+</li>
+</ul>
+</h5>
+</details>
+</h4>
+
+<h4>
+<details>
+<summary>Zadania offline</summary>
+<hr>
+<h5>W tej sekcji znajdują się rozwiązania tzw. zadań offline. Zadania offline były to zadania domowe na dodatkowe punkty. Po przesłaniu, losowane były osoby, którym zadanie zostanie ocenione.</h5>
+<hr>
+<h5>
+<ul>
+<li>
+  <h3>1. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/1. Zadanie/temat1.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/1. Zadanie/zad1.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>2. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/2. Zadanie/temat2.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/2. Zadanie/zad2.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>3. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/3. Zadanie/temat3.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/3. Zadanie/zad3.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>5. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/5. Zadanie/temat5.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/5. Zadanie/zad1.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>6. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/6. Zadanie/notes.svg">Notatki</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/6. Zadanie/temat6.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/6. Zadanie/zad6.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>7. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/7. Zadanie/temat7.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/7. Zadanie/zad7.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>8. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/8. Zadanie/temat8.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/8. Zadanie/zad8.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>9. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/9. Zadanie/temat9.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/9. Zadanie/zad9.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>10. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/10. Zadanie/temat10.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/10. Zadanie/zad10.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>11. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/11. Zadanie/temat11.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/11. Zadanie/zad11.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>12. Zadanie</h3>
+  <ul>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/12. Zadanie/temat12.pdf">Treść</a>
+      </li>
+     <li>
+        <a href="./Zadania offline (przesyłane na punkty)/12. Zadanie/zad12.py">Rozwiązanie</a>
+      </li>
+  </ul>
+</li>
+</ul>
+</h5>
+</details>
+</h4>
+
+<h4>
 <details>
 <summary>Kolokwia</summary>
 <hr>
@@ -939,9 +1171,311 @@ Poniższe sekcje zawierają rozwiązania zadań z laboratoriów, zajęć prowadz
       </li>
     </ul>
   </li>
+</ol>
+</h5>
+</details>
+</h4>
 
-</h2>
+<h4>
+<details>
+<summary>Egzaminy</summary>
+<hr>
+<h5>W tej sekcji znajdują się rozwiązania zadań z egzaminów (tych mam najmniej).</h5>
+<hr>
+<h5>
+<ol>
+  <li>
+    <h3>2012-2013</h3>
+    <ul>
+      <li>
+        <h3>Grupa A</h3>
+        <ul>
+          <li>
+              <a href="./Egzaminy/2012-2013/grupa_A/zad1.py">1. Zadanie</a>
+            </li>
+          <li>
+              <a href="./Egzaminy/2012-2013/grupa_A/zad2.py">2. Zadanie</a>
+            </li>
+          <li>
+              <a href="./Egzaminy/2012-2013/grupa_A/zad3.py">3. Zadanie</a>
+            </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Grupa B</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2012-2013/grupa_B/zad1.py">1. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2012-2013/grupa_B/zad2.py">2. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2012-2013/grupa_B/zad3.py">3. Zadanie</a>
+        </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 
-## Przydatne algorytmy
+  <li>
+    <h3>2019-2020</h3>
+    <ul>
+      <li>
+        <h3>I Termin</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2019-2020/1. Pierwszy termin/zad1.py">1. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2019-2020/1. Pierwszy termin/zad2.py">2. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2019-2020/1. Pierwszy termin/zad3.py">3. Zadanie</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>II Termin</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2019-2020/2. Drugi termin/zad1.py">1. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2019-2020/2. Drugi termin/zad2.py">2. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2019-2020/2. Drugi termin/zad3.py">3. Zadanie</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>III Termin</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2019-2020/3. Trzeci termin/zad1.py">1. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2019-2020/3. Trzeci termin/zad2.py">2. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2019-2020/3. Trzeci termin/zad3.py">3. Zadanie</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <h3>2020-2021</h3>
+    <p>Niektóre zadania dałoby się lepiej rozwiązać</p>
+    <ul>
+      <li>
+        <h3>Termin zerowy</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2020-2021/Termin zerowy - dla osób z podobieństwem kodu/zad1.py">1. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Termin zerowy - dla osób z podobieństwem kodu/zad1-v2.py">1. Zadanie (lepsze rozwiązanie)</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Termin zerowy - dla osób z podobieństwem kodu/zad2.py">2. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Termin zerowy - dla osób z podobieństwem kodu/zad3.py">3. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Termin zerowy - dla osób z podobieństwem kodu/zad3-with-paths.py">3. Zadanie (ze zwracaniem ścieżek)</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>I Termin</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2020-2021/Pierwszy termin/zad1.py">1. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Pierwszy termin/zad2.py">2. Zadanie</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>II Termin</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2020-2021/Drugi termin/zad2.py">2. Zadanie</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>III Termin</h3>
+        <ul>
+          <li>
+            <a href="./Egzaminy/2020-2021/Trzeci termin/zad1.py">1. Zadanie</a>
+            (<a href="./Egzaminy/2020-2021/Trzeci termin/zad1-opis.txt"> -> szczegółowy opis</a>)
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Trzeci termin/zad2.py">2. Zadanie</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Trzeci termin/zad3-bad.py">3. Zadanie (słabe rozwiązanie)</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Trzeci termin/zad3-better-1.py">3. Zadanie (lepsze rozwiązanie v1)</a>
+          </li>
+          <li>
+            <a href="./Egzaminy/2020-2021/Trzeci termin/zad3-better-2.py">3. Zadanie (lepsze rozwiązanie v2)</a>
+          </li>
+        </ul>
+      </li>
+      </ol>
+  </li>
+</ol>
+</h5>
+</details>
+</h4>
+
+<br>
+
+## Algorytmy - szczegółowy opis oraz implementacje
 
 ---
+
+Poniższe sekcje zawierają moje implementacje algorytmów wykorzystywanych podczas rozwiązywania zadań. Każdy algorytm został szczegółowo opisany, wyznaczona została złożoność obliczeniowa oraz pamięciowa, a także przeprowadzone zostały testy poprawności.
+
+<h4>
+<details>
+<summary>Algorytmy z wykładów</summary>
+<hr>
+<h5>W tej sekcji znajdują się moje implementacje algorytmów omawianych na wykładach wraz ze szczegółowym opisem oraz testami poprawności.</h5>
+<hr>
+<h5>
+<ol>
+<li>
+  <h3>Algorytmy grafowe</h3>
+  <ul>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] (DFS) Cykl Eulera, ścieżka Eulera, spójność.ipynb">Dfs Cykl Eulera, Ścieżka Eulera, Spójność</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] (DFS) Sortowanie topologiczne DAGu.ipynb">Dfs Sortowanie Topologiczne Dagu</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Algorytm Bellmana-Forda - najkrótsze ścieżki jeden do wszystkich, dowolne wagi.ipynb">Algorytm Bellmana-Forda - Najkrótsze Ścieżki Jeden Do Wszystkich, Dowolne Wagi</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Algorytm Dijsktry - najkrótsze ścieżki jeden do wszystkich, tylko nieujemne wagi.ipynb">Algorytm Dijsktry - Najkrótsze Ścieżki Jeden Do Wszystkich, Tylko Nieujemne Wagi</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Algorytm Floyda-Warshalla - najkrótsze ścieżki między każdą parą wierzchołków, dowolne wagi.ipynb">Algorytm Floyda-Warshalla - Najkrótsze Ścieżki Między Każdą Parą Wierzchołków, Dowolne Wagi</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] MST - Algorytm Kruskala.ipynb">Mst - Algorytm Kruskala</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] MST - Algorytm Prima.ipynb">Mst - Algorytm Prima</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Maksymalny przepływ (grafy skierowane lub nieskierowane).ipynb">Maksymalny Przepływ Grafy Skierowane Lub Nieskierowane</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Reprezentacja grafu, BFS i DFS.ipynb">Reprezentacja Grafu, Bfs I Dfs</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Silnie spójne składowe grafu skierowanego.ipynb">Silnie Spójne Składowe Grafu Skierowanego</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Znajdowanie maksymalnych skojarzeń w grafach dwudzielnych.ipynb">Znajdowanie Maksymalnych Skojarzeń W Grafach Dwudzielnych</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Grafowe] Znajdowanie mostów w grafie, punkty artykulacji.ipynb">Znajdowanie Mostów W Grafie, Punkty Artykulacji</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy grafowe/[Wykorzystywane przez grafowe] Rodzina zbiorów rozłącznych.ipynb">[Wykorzystywane. Przez Grafowe] Rodzina Zbiorów Rozłącznych</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>Algorytmy zachłanne</h3>
+  <ul>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy zachłanne/Ciągły problem plecakowy.ipynb">Ciągły Problem Plecakowy</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy zachłanne/Kodowanie Huffmana.ipynb">Kodowanie Huffmana</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Algorytmy zachłanne/Problem szeregowania zadań.ipynb">Problem Szeregowania Zadań</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>Algorytmy dynamiczne</h3>
+  <ul>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Programowanie dynamiczne/[Dynamiczne] Dyskretny problem plecakowy.ipynb">Dyskretny Problem Plecakowy</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Programowanie dynamiczne/[Dynamiczne] Impreza instytutowa (firmowa).ipynb">Impreza Instytutowa Firmowa</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Programowanie dynamiczne/[Dynamiczne] Impreza instytutowa II.ipynb">Impreza Instytutowa Ii</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Programowanie dynamiczne/[Dynamiczne] Najdłuższy rosnący podciąg (niespójny).ipynb">Najdłuższy Rosnący Podciąg Niespójny</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Programowanie dynamiczne/[Dynamiczne] Problem komiwojażera.ipynb">Problem Komiwojażera</a>
+      </li>
+  </ul>
+</li>
+<li>
+  <h3>Algorytmy</h3>
+  <ul>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Tablice asocjacyjne/[Tablice asocjacyjne] Drzewa BST.ipynb">Drzewa Bst</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Tablice asocjacyjne/[Tablice asocjacyjne] Drzewa czerwono-czarne.ipynb">Drzewa Czerwono-Czarne</a>
+      </li>
+     <li>
+        <a href="./Przydatne algorytmy/Algorytmy z wykładów/Tablice asocjacyjne/[Tablice asocjacyjne] Drzewa przedziałowe.ipynb">Drzewa Przedziałowe</a>
+      </li>
+  </ul>
+</li>
+</ol>
+</h5>
+</details>
+</h4>
+
+<h4>
+<details>
+<summary>Moje opracowania - pomocne w nauce</summary>
+<hr>
+<h5>W tej sekcji znajdują się moje przemyślenia dotyczące algorytmów, różne implementacje, porównania ich wydajności oraz przykłady zastosowań - kiedy, który algorytm, dla jakich danych.</h5>
+<h5>Materiał zawarty w tej sekcji może posłużyć do powtórzenia wiadomości z danego zakresu. Algorytmy oraz struktury danych zostały pogrupowane tematycznie w poszczególnych plikach, dzięki czemu łatwiejsze było porównanie ich zastosowania oraz charakterystyki.</h5>
+<hr>
+<h5>
+<h3>Moje opracowania</h3>
+<ul>
+    <li>
+      <a href="./Przydatne algorytmy/Moje opracowania/Algorytmy sortowania (listy odsyłaczowe jednokierunkowe).ipynb">Algorytmy Sortowania - Listy Odsyłaczowe Jednokierunkowe</a>
+    </li>
+    <li>
+      <a href="./Przydatne algorytmy/Moje opracowania/Algorytmy sortowania (tablice).ipynb">Algorytmy Sortowania - Tablice</a>
+    </li>
+    <li>
+      <a href="./Przydatne algorytmy/Moje opracowania/Algorytmy wyszukiwania i wybierania.ipynb">Algorytmy Wyszukiwania i Wybierania</a>
+    </li>
+    <li>
+      <a href="./Przydatne algorytmy/Moje opracowania/Drzewiaste struktury danych.ipynb">Drzewiaste Struktury Danych</a>
+    </li>
+    <li>
+      <a href="./Przydatne algorytmy/Moje opracowania/Liniowe struktury danych.ipynb">Liniowe Struktury Danych</a>
+    </li>
+</ul>
+</h5>
+</details>
+</h4>
