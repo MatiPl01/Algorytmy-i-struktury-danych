@@ -1,4 +1,10 @@
-# Algorytmy i Struktury Danych
+# 🎓 AGH - Algorytmy i Struktury Danych
+
+![image](https://user-images.githubusercontent.com/52978053/233799429-2beedae7-8972-4518-9bc7-f30b21b8d3bc.png)
+
+<br>
+
+## ✍️ Słowem wstępu...
 
 To repozytorium zawiera rozwiązania zadań, kolokwiów, egzaminów oraz wiele przydanych algorytmów, jakie przydały mi się podczas zajęć z przedmiotu Algorytmy i Struktury Danych prowadzonego w latach 2020-2021.
 
@@ -6,7 +12,7 @@ Algorytmy zostały napisane z dbałością o czytelność kodu, niską złożono
 
 <br>
 
-## Rozwiązania zadań
+## 🤔 Rozwiązania zadań
 
 ---
 
@@ -1339,7 +1345,7 @@ Poniższe sekcje zawierają rozwiązania zadań z laboratoriów, zajęć prowadz
 
 <br>
 
-## Algorytmy - szczegółowy opis oraz implementacje
+## ⚙️ Algorytmy - szczegółowy opis oraz implementacje
 
 ---
 
